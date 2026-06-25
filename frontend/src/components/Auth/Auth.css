@@ -1,0 +1,162 @@
+/* =====================================================
+   NOVORA — Auth Component (Login / Register)
+   ===================================================== */
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 9, 24, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fade-in 0.4s ease;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 36px;
+  animation: slide-up 0.5s ease;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-logo-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.auth-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.auth-logo-tagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.auth-tabs {
+  display: flex;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  margin-bottom: 28px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.auth-tab.active {
+  background: var(--violet-500);
+  color: white;
+  box-shadow: 0 2px 12px var(--violet-glow);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.auth-input {
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.auth-input:focus {
+  border-color: var(--violet-500);
+  background: rgba(124,58,237,0.06);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+}
+
+.auth-input::placeholder { color: var(--text-muted); }
+
+.auth-submit {
+  padding: 13px;
+  background: linear-gradient(135deg, var(--violet-500), #5b21b6);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px var(--violet-glow);
+  margin-top: 4px;
+}
+
+.auth-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 28px rgba(124,58,237,0.5);
+}
+
+.auth-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.auth-error {
+  padding: 10px 14px;
+  background: rgba(248,113,113,0.1);
+  border: 1px solid rgba(248,113,113,0.3);
+  border-radius: var(--radius-md);
+  color: var(--red-400);
+  font-size: 0.83rem;
+  text-align: center;
+}
+
+.auth-offline-note {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.auth-offline-note span {
+  color: #34d399;
+  font-weight: 600;
+}
